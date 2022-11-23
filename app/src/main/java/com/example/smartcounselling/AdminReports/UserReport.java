@@ -152,18 +152,6 @@ public class UserReport extends AppCompatActivity {
         noCell.setHorizontalAlignment(Element.ALIGN_CENTER);
         noCell.setVerticalAlignment(Element.ALIGN_CENTER);
 
-//        Chunk nameText = new Chunk("Address", white);
-//        PdfPCell nameCell = new PdfPCell(new Phrase(nameText));
-//        nameCell.setFixedHeight(50);
-//        nameCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-//        nameCell.setVerticalAlignment(Element.ALIGN_CENTER);
-//
-//        Chunk phoneText = new Chunk("Status", white);
-//        PdfPCell phoneCell = new PdfPCell(new Phrase(phoneText));
-//        phoneCell.setFixedHeight(50);
-//        phoneCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-//        phoneCell.setVerticalAlignment(Element.ALIGN_CENTER);
-
         Chunk amountText = new Chunk("Full Name", white);
         PdfPCell amountCell = new PdfPCell(new Phrase(amountText));
         amountCell.setFixedHeight(50);
@@ -205,7 +193,7 @@ public class UserReport extends AppCompatActivity {
             cell.setBackgroundColor(grayColor);
         }
         for (int i = 0; i < paymentUsersList.size(); i++) {
-            Account pay = paymentUsersList1.get(i);
+            User pay = paymentUsersList.get(i);
 
             String id = String.valueOf(i + 1);
             String address = pay.getAddress();
@@ -213,19 +201,18 @@ public class UserReport extends AppCompatActivity {
             String fullName = pay.getFullName();
             String phoneNumber = pay.getPhoneNumber();
             String dob = pay.getDateOfBirth();
-//            String status = pay.getStatus();
+
 
 
             table.addCell(id + ". ");
-//            table.addCell(address);
-//            table.addCell(dateOfBirth);
+
             table.addCell(fullName);
             table.addCell(phoneNumber);
             table.addCell(dob);
-//            table.addCell(status);
+
 
         }
-        PdfPTable footTable = new PdfPTable(new float[]{6, 20, 20, 20, 20});
+        PdfPTable footTable = new PdfPTable(new float[]{6, 25, 20, 20});
         footTable.setTotalWidth(PageSize.A4.getWidth());
         footTable.setWidthPercentage(100);
         footTable.addCell(footCell);

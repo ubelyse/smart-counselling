@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.smartcounselling.Logins.LoginActivity;
+import com.example.smartcounselling.Models.Account;
 import com.example.smartcounselling.Models.User;
 import com.example.smartcounselling.R;
 import com.github.barteksc.pdfviewer.PDFView;
@@ -50,6 +51,8 @@ public class UserReport extends AppCompatActivity {
     private DatabaseReference userRef;
     private DatabaseReference payRef;
     List<User> paymentUsersList;
+
+    List<Account>paymentUsersList1;
     public static String[] PERMISSIONS = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -78,6 +81,8 @@ public class UserReport extends AppCompatActivity {
         });
 
         paymentUsersList = new ArrayList<>();
+
+        paymentUsersList1 = new ArrayList<>();
         //create files in charity care folder
         payfile = new File("/storage/emulated/0/Report/");
         //check if they exist, if not create them(directory)
@@ -95,19 +100,24 @@ public class UserReport extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     User pays = new User();
+
+
 //                    pays.setAddress(snapshot.child("address").getValue().toString());
 //                    pays.setDateOfBirth(snapshot.child("dateOfBirth").getValue().toString());
                     pays.setFullName(snapshot.child("fullName").getValue().toString());
                     pays.setPhoneNumber(snapshot.child("phoneNumber").getValue().toString());
                     pays.setDateOfBirth(snapshot.child("dateOfBirth").getValue().toString());
+//                    pa.setStatus(snapshot.child("status").getValue().toString());
 
 //                    Log.d("Payment", "Address: " + pays.getAddress());
 //                    Log.d("Payment", "dateOfBirth: " + pays.getDateOfBirth());
                     Log.d("Payment", "Full Name: " + pays.getFullName());
                     Log.d("Payment", "phoneNumber: " + pays.getPhoneNumber());
                     Log.d("Payment", "D.O.B: " + pays.getDateOfBirth());
+//                    Log.d("Payment", "Status: " + pa.getStatus());
 
                     paymentUsersList.add(pays);
+//                    paymentUsersList1.add(pa);
                 }
                 try {
                     createPaymentReport(paymentUsersList);
@@ -148,7 +158,7 @@ public class UserReport extends AppCompatActivity {
 //        nameCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 //        nameCell.setVerticalAlignment(Element.ALIGN_CENTER);
 //
-//        Chunk phoneText = new Chunk("dateOfBirth", white);
+//        Chunk phoneText = new Chunk("Status", white);
 //        PdfPCell phoneCell = new PdfPCell(new Phrase(phoneText));
 //        phoneCell.setFixedHeight(50);
 //        phoneCell.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -195,7 +205,7 @@ public class UserReport extends AppCompatActivity {
             cell.setBackgroundColor(grayColor);
         }
         for (int i = 0; i < paymentUsersList.size(); i++) {
-            User pay = paymentUsersList.get(i);
+            Account pay = paymentUsersList1.get(i);
 
             String id = String.valueOf(i + 1);
             String address = pay.getAddress();
@@ -203,6 +213,7 @@ public class UserReport extends AppCompatActivity {
             String fullName = pay.getFullName();
             String phoneNumber = pay.getPhoneNumber();
             String dob = pay.getDateOfBirth();
+//            String status = pay.getStatus();
 
 
             table.addCell(id + ". ");
@@ -211,9 +222,10 @@ public class UserReport extends AppCompatActivity {
             table.addCell(fullName);
             table.addCell(phoneNumber);
             table.addCell(dob);
+//            table.addCell(status);
 
         }
-        PdfPTable footTable = new PdfPTable(new float[]{6, 25, 20, 20});
+        PdfPTable footTable = new PdfPTable(new float[]{6, 20, 20, 20, 20});
         footTable.setTotalWidth(PageSize.A4.getWidth());
         footTable.setWidthPercentage(100);
         footTable.addCell(footCell);
@@ -221,7 +233,7 @@ public class UserReport extends AppCompatActivity {
         PdfWriter.getInstance(document, output);
         document.open();
         Font g = new Font(Font.FontFamily.HELVETICA, 25.0f, Font.NORMAL, grayColor);
-        document.add(new Paragraph(" User Report\n\n", g));
+        document.add(new Paragraph(" Patient Report\n\n", g));
         document.add(table);
         document.add(footTable);
 

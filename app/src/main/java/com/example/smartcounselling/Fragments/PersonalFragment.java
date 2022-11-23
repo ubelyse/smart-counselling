@@ -65,7 +65,7 @@ public class PersonalFragment extends Fragment implements View.OnClickListener {
     Button btnEditProfile;
     private Cursor cursor;
     private int columnIndex;
-    private TextView txtPhoneNumber, txtDateOfBirth, txtAddress,txtGender, txtFullName, txtDescription,txtStatu;
+    private TextView txtPhoneNumber, txtDateOfBirth, txtAddress,txtGender, txtFullName, txtDescription,txtStatu,labelStatu;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private FirebaseAnalytics mFirebaseAnalytics;
@@ -97,7 +97,9 @@ public class PersonalFragment extends Fragment implements View.OnClickListener {
         txtPhoneNumber = v.findViewById(R.id.textViewPhoneNumber);
         txtDateOfBirth = v.findViewById(R.id.textViewDateofBirth);
         txtAddress = v.findViewById(R.id.textViewAddress);
+
         txtStatu = v.findViewById(R.id.textViewStatu);
+        labelStatu = v.findViewById(R.id.labelStatu);
 
 
         txtDescription = v.findViewById(R.id.textViewDescription);
@@ -145,7 +147,8 @@ public class PersonalFragment extends Fragment implements View.OnClickListener {
                     txtAddress.setText(doctor.getAddress());
 
                     txtDescription.setText(doctor.getDescription());
-                    txtStatu.setText(account.getStatus());
+                    txtStatu.setVisibility(View.INVISIBLE);
+                    labelStatu.setVisibility(View.INVISIBLE);
 
                 }
             }

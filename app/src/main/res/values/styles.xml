@@ -1,0 +1,45 @@
+<resources>
+    <!-- Base application theme. -->
+      <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+   <!-- <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
+
+    <style name="MateTheme" parent="Theme.MaterialComponents.DayNight"/>
+
+    <style name="AllTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+
+    <style name="MyCustomTheme" parent="RaveAppTheme.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+<!--        <item name="OTPButtonStyle">@style/myOtpBtnStyle</item>-->
+<!--        <item name="PayButtonStyle">@style/myBtnStyle</item>-->
+<!--        <item name="PinButtonStyle">@style/myPinButtonStyle</item>-->
+<!--        <item name="OTPHeaderStyle">@style/myOtpHeaderStyle</item>-->
+<!--        <item name="TabLayoutStyle">@style/myTabLayoutStyle</item>-->
+<!--        <item name="PinHeaderStyle">@style/myPinHeaderStyle</item>-->
+<!--        <item name="PaymentTileStyle">@style/myPaymentTileStyle</item>-->
+<!--        <item name="PaymentTileTextStyle">@style/myPaymentTileTextStyle</item>-->
+<!--        <item name="PaymentTileDividerStyle">@style/myPaymentTileDividerStyle</item>-->
+    </style>
+
+
+</resources>

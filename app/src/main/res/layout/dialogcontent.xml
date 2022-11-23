@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Update Patients"
+        android:background="@color/colorPrimary"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:textColor="#fff"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address"
+        android:id="@+id/address"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:id="@+id/descri"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:id="@+id/uname"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:id="@+id/dphone"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"/>
+
+    <LinearLayout
+        android:id="@+id/editDiseases"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPhoneNumber"
+        android:layout_marginTop="@dimen/margin_top_register_10dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkbox_Addict"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:text="@string/Addict"
+            android:textColor="@color/black" />
+
+        <CheckBox
+            android:id="@+id/checkbox_Depressed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:text="@string/Depression"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:id="@+id/uemail"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Status"
+        android:textColor="@color/black"
+        android:id="@+id/ustatus"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="@dimen/margin_top_register_10dp"
+        android:layout_below="@+id/uemail"
+        android:orientation="horizontal">
+
+
+        <RadioButton
+            android:id="@+id/radioNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_edit_profile"
+            android:buttonTint="@color/black"
+            android:layout_marginStart="15dp"
+            android:checked="true"
+            />
+
+        <RadioButton
+            android:id="@+id/radioProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="In Progress"
+            android:textColor="@color/black"
+            android:buttonTint="@color/black"
+            android:textSize="@dimen/text_size_edit_profile"
+            android:layout_marginStart="10dp"/>
+
+        <RadioButton
+            android:id="@+id/radioCompleted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Completed"
+            android:textColor="@color/black"
+            android:buttonTint="@color/black"
+            android:textSize="@dimen/text_size_edit_profile"
+            android:layout_marginStart="10dp"/>
+
+    </RadioGroup>
+
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:id="@+id/usubmit"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        />
+
+</LinearLayout>

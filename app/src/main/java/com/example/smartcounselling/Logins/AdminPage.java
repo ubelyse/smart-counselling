@@ -64,7 +64,7 @@ public class AdminPage extends AppCompatActivity {
     List<Constants> UsersList;
     private FirebaseAnalytics mFirebaseAnalytics;
 
-    private MaterialCardView mseeuser,mseedoc,mdocreport,mreport,musereport;
+    private MaterialCardView mseeuser,mseedoc,mdocreport,mreport,musereport,mbtnseeMsg;
     private Button logt;
 
     @Override
@@ -119,6 +119,14 @@ public class AdminPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+//        mbtnseeMsg.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent(AdminPage.this, HealedReport.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
         mreport.setOnClickListener(new View.OnClickListener() {

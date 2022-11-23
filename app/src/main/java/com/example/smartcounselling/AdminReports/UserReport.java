@@ -65,8 +65,8 @@ public class UserReport extends AppCompatActivity {
         setContentView(R.layout.activity_user_report);
 
         mAuth = FirebaseAuth.getInstance();
-        userRef = FirebaseDatabase.getInstance().getReference().child("users");
-        payRef = FirebaseDatabase.getInstance().getReference().child("users");
+        userRef = FirebaseDatabase.getInstance().getReference().child("patients");
+        payRef = FirebaseDatabase.getInstance().getReference().child("patients");
         pdfView = findViewById(R.id.payment_pdf_viewer);
 
         Button reportButton = findViewById(R.id.button_disable_report);
@@ -172,7 +172,7 @@ public class UserReport extends AppCompatActivity {
         rleCell.setHorizontalAlignment(Element.ALIGN_CENTER);
         rleCell.setVerticalAlignment(Element.ALIGN_CENTER);
 
-        Chunk footerText = new Chunk("Belyse Inema - Copyright @ 2021");
+        Chunk footerText = new Chunk("Copyright @ 2022");
         PdfPCell footCell = new PdfPCell(new Phrase(footerText));
         footCell.setFixedHeight(70);
         footCell.setHorizontalAlignment(Element.ALIGN_CENTER);

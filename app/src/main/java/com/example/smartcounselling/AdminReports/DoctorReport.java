@@ -172,7 +172,7 @@ public class DoctorReport extends AppCompatActivity {
         rleCell.setHorizontalAlignment(Element.ALIGN_CENTER);
         rleCell.setVerticalAlignment(Element.ALIGN_CENTER);
 
-        Chunk footerText = new Chunk("Belyse Inema - Copyright @ 2021");
+        Chunk footerText = new Chunk("Copyright @ 2022");
         PdfPCell footCell = new PdfPCell(new Phrase(footerText));
         footCell.setFixedHeight(70);
         footCell.setHorizontalAlignment(Element.ALIGN_CENTER);

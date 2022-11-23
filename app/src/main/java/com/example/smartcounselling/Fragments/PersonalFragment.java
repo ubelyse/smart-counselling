@@ -133,18 +133,18 @@ public class PersonalFragment extends Fragment implements View.OnClickListener {
 
                 for (DataSnapshot child : node) {
                     if(child.getKey().equals(uid)) {
-                        account = child.getValue(Account.class);
+                        doctor = child.getValue(Doctor.class);
 
                     }
                 }
-                if (account != null) {
+                if (doctor != null) {
 
-                    txtFullName.setText(account.getFullName());
-                    txtPhoneNumber.setText(account.getPhoneNumber()+"");
-                    txtDateOfBirth.setText(account.getDateOfBirth());
-                    txtAddress.setText(account.getAddress());
+                    txtFullName.setText(doctor.getFullName());
+                    txtPhoneNumber.setText(doctor.getPhoneNumber()+"");
+                    txtDateOfBirth.setText(doctor.getDateOfBirth());
+                    txtAddress.setText(doctor.getAddress());
 
-                    txtDescription.setText(account.getDescription());
+                    txtDescription.setText(doctor.getDescription());
                     txtStatu.setText(account.getStatus());
 
                 }
